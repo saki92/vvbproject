@@ -1092,7 +1092,7 @@ class ItemMaster(models.Model):
         db_table = 'item_master'
 
 class LedgerName(models.Model):
-    code = models.IntegerField()
+    code = models.IntegerField(primary_key=True)
     ocode = models.BigIntegerField()
     gcode = models.BigIntegerField(blank=True, null=True)
     prefix = models.CharField(max_length=10, blank=True)

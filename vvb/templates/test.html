@@ -1,0 +1,22 @@
+<html><body>
+<head>
+	<link rel="stylesheet" href="/static/css/jquery.autocomplete.css" type="text/css" />
+
+	<script type="text/javascript" src="/static/js/OpenLayers.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-1.3.2.min.js" > </script>
+	<script type="text/javascript" src="/static/js/jquery.autocomplete.pack.js"></script>
+<script>
+//var ld_names=['sakthivel','santhosh','sathish'];
+var ld_names=Array();
+var data;
+$(document).ready(function(){
+//	$.ajax({url:'/ref/',success:function(result){data=result; $.each(result, function(result) {ld_names.push(result);})}});
+	$.getJSON("/ref/", function(json) { data=json; $.each(json, function(i,j) {ld_names.push(i);});});
+	//$.post('/ldname/', {check:"jsrequest"}, function(ret_data){ld_names=ret_data; $('span').html(ret_data);})
+	$('#chk').autocomplete(ld_names, {autoFill:true});
+});
+</script>
+</head>
+<div class='ui-widget'><label for='chk'></label><input id='chk' />
+</div>static
+</body></html>

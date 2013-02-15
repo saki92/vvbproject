@@ -1,0 +1,21 @@
+<html><body>
+<head>
+	<link rel="stylesheet" href="/static/css/jquery.autocomplete.css" type="text/css" />
+
+	<script type="text/javascript" src="/static/js/OpenLayers.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-1.3.2.min.js" > </script>
+	<script type="text/javascript" src="/static/js/jquery.autocomplete.pack.js"></script>
+<script>
+var ld_names=['sakthivel','santhosh','sathish'];
+var nam='gfukju'
+$(document).ready(function(){
+//	$.ajax({url:'/ldname/',success:function(result){$('#nds').html(result); /*ld_names=result;*/}});
+	//$.post('/ldname/', {check:"jsrequest"}, function(ret_data){ld_names=ret_data; $('span').html(ret_data);})
+	$('#chk').autocomplete({source:ld_names}, {autoFill:true});
+	$('#nds').html(nam);
+});
+</script>
+</head>
+<div class='ui-widget'><label for='chk'></label><input id='chk' /><div id='nds'></div>
+</div>static dsd
+</body></html>
